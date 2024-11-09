@@ -10,5 +10,20 @@ document.addEventListener("DOMContentLoaded", function() {
         } else {
             header.style.backgroundColor = "#6b5b95";
         }
+        
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.getElementById("toggleAbout");
+    const aboutSection = document.getElementById("about");
+
+    toggleButton.addEventListener("click", function() {
+        // Toggle the "About Me" section's visibility
+        if (aboutSection.style.display === "none") {
+            aboutSection.style.display = "block";
+        } else {
+            aboutSection.style.display = "none";
+        }
+    });
+});
+
     });
 });

@@ -44,3 +44,14 @@ section {
 h1, h2 {
     color: #6b5b95;
 }
+
+header {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}

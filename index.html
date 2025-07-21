@@ -1,38 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krista's Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Octopi Fantasies</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom, #000015, #000022);
+      overflow: hidden;
+      color: white;
+      font-family: 'Orbitron', sans-serif;
+      height: 100vh;
+      width: 100vw;
+      position: relative;
+    }
+
+    .background-lines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background: url('https://www.transparenttextures.com/patterns/foggy-birds.png'); /* Placeholder, should be replaced with glowing fluid animation */
+      background-size: cover;
+      filter: brightness(1.5) contrast(1.2) opacity(0.08);
+      animation: float 20s infinite linear;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-5%); }
+    }
+
+    .title {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4rem;
+      font-weight: bold;
+      z-index: 1;
+      transition: all 0.4s ease;
+    }
+
+    .menu-icon {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    .menu-icon:before, .menu-icon:after, .menu-icon div {
+      content: '';
+      background: white;
+      display: block;
+      height: 4px;
+      margin: 6px 0;
+      transition: all 0.4s ease;
+    }
+
+    .menu {
+      position: absolute;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background: white;
+      color: black;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-left: 40px;
+      transition: right 0.6s ease;
+      z-index: 1;
+    }
+
+    .menu a {
+      margin: 10px 0;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: black;
+    }
+
+    body.menu-open .menu {
+      right: 0;
+    }
+
+    body.menu-open .title {
+      transform: translate(-60%, -50%);
+      color: #888;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <a href="#about">About Me</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Write a brief introduction about yourself here.</p>
-    </section>
-    <section id="projects">
-        <h2>Projects</h2>
-        <p>Showcase your projects here.</p>
-    </section>
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Add your contact details or a form here.</p>
-    </section>
-    
-<button id="toggleAbout">Toggle About Me</button>
-<section id="about">
-    <h2>About Me</h2>
-    <p>Write a brief introduction about yourself here.</p>
-</section>
+  <div class="background-lines"></div>
 
+  <div class="title">Octopi Fantasies</div>
+
+  <div class="menu-icon" onclick="toggleMenu()">
+    <div></div>
+  </div>
+
+  <div class="menu">
+    <a href="#about">About Me</a>
+    <a href="#case-studies">Case Studies</a>
+    <a href="#creativity">Creativity</a>
+    <a href="#knowledge">Knowledge Base</a>
+    <a href="#contact">Find Me Here</a>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.body.classList.toggle('menu-open');
+    }
+  </script>
 </body>
 </html>

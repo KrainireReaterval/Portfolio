@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Studies - Krista Liu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&family=Noto+Serif:wght@700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', serif;
+      background-color: #ffffff;
+      color: #111;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .back-arrow {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 30px;
+      height: 30px;
+      background: url('https://img.icons8.com/ios-filled/50/000000/left.png') no-repeat center center;
+      background-size: contain;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-family: 'Noto Serif', serif;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .study {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      margin-bottom: 80px;
+    }
+
+    .study.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .study-text {
+      flex: 1;
+    }
+
+    .study-text h2 {
+      font-family: 'Noto Serif', serif;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .study-text p {
+      font-size: 1rem;
+      color: #333;
+    }
+
+    .study-image {
+      flex: 1;
+    }
+
+    .study-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    @media (max-width: 768px) {
+      .study, .study.reverse {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-arrow"></a>
+
+  <div class="container">
+    <h1>Case Studies</h1>
+
+    <div class="study">
+      <div class="study-text">
+        <h2>Project Title One</h2>
+        <p>A brief description of what this project was about, what problem it solved, and how it reflects your workflow or creative thinking. This section should stay concise and clear.</p>
+      </div>
+      <div class="study-image">
+        <img src="https://via.placeholder.com/400x300.png?text=Project+1" alt="Project 1">
+      </div>
+    </div>
+
+    <div class="study reverse">
+      <div class="study-text">
+        <h2>Project Title Two</h2>
+        <p>Describe the impact, tools used, or process of this second project. Highlight what makes it different from the others and what your key takeaways were.</p>
+      </div>
+      <div class="study-image">
+        <img src="https://via.placeholder.com/400x300.png?text=Project+2" alt="Project 2">
+      </div>
+    </div>
+
+    <div class="study">
+      <div class="study-text">
+        <h2>Project Title Three</h2>
+        <p>Use this space for another case study. You can include creative, technical, or collaborative work — just make sure it reflects your unique value and contribution.</p>
+      </div>
+      <div class="study-image">
+        <img src="https://via.placeholder.com/400x300.png?text=Project+3" alt="Project 3">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

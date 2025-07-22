@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge Base - Krista Liu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto+Condensed&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto Condensed', sans-serif;
+      background-color: #ffffff;
+      color: #111;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+    }
+
+    .search-bar {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      margin-bottom: 30px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      border: 1px solid #ccc;
+      border-radius: 20px;
+      background: #f7f7f7;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+    .tab.active {
+      background: #111;
+      color: white;
+      border-color: #111;
+    }
+
+    .results {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .result {
+      border-bottom: 1px solid #eee;
+      padding-bottom: 15px;
+    }
+
+    .result h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 5px;
+    }
+
+    .result p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .result a {
+      color: #007aff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Knowledge Base</h1>
+    <input type="text" class="search-bar" placeholder="Search research notes, topics, or tools..." oninput="filterResults()">
+
+    <div class="tabs">
+      <div class="tab active" onclick="filterByCategory('all')">All</div>
+      <div class="tab" onclick="filterByCategory('ai')">AI & Tools</div>
+      <div class="tab" onclick="filterByCategory('design')">Design</div>
+      <div class="tab" onclick="filterByCategory('quant')">Quant & Finance</div>
+      <div class="tab" onclick="filterByCategory('science')">Science</div>
+      <div class="tab" onclick="filterByCategory('writing')">Writing</div>
+    </div>
+
+    <div class="results" id="results">
+      <div class="result" data-category="ai">
+        <h3><a href="#">Using GPT-4 in Design Ideation</a></h3>
+        <p>Exploring how GPT-4 can generate moodboards, product copy, and layout variations.</p>
+      </div>
+      <div class="result" data-category="quant">
+        <h3><a href="#">Intro to Monte Carlo Methods in Investment</a></h3>
+        <p>A beginner's breakdown of stochastic modeling and risk simulation in quant finance.</p>
+      </div>
+      <div class="result" data-category="design">
+        <h3><a href="#">Figma Plugin Workflow with AI Support</a></h3>
+        <p>Creating modular components with AI-assisted alignment, hierarchy, and accessibility.</p>
+      </div>
+      <div class="result" data-category="science">
+        <h3><a href="#">Bioplastic Decomposition Rates</a></h3>
+        <p>Environmental breakdown speeds across multiple bioplastic families and contexts.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function filterResults() {
+      const input = document.querySelector('.search-bar').value.toLowerCase();
+      const items = document.querySelectorAll('.result');
+      items.forEach(item => {
+        const text = item.innerText.toLowerCase();
+        item.style.display = text.includes(input) ? 'block' : 'none';
+      });
+    }
+
+    function filterByCategory(category) {
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      event.target.classList.add('active');
+
+      document.querySelectorAll('.result').forEach(result => {
+        if (category === 'all' || result.dataset.category === category) {
+          result.style.display = 'block';
+        } else {
+          result.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Me Here - Krista Liu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Oswald', sans-serif;
+      background: linear-gradient(135deg, #f7f1de, #f2f2f2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .hub {
+      max-width: 600px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+    }
+
+    .link-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .link-card:hover {
+      transform: scale(1.03);
+    }
+
+    .link-icon {
+      width: 32px;
+      height: 32px;
+    }
+
+    .link-label {
+      font-size: 1.2rem;
+      color: #111;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="hub">
+    <a href="https://www.linkedin.com/in/your-profile" target="_blank">
+      <div class="link-card" style="background-color: rgba(14, 118, 168, 0.2);">
+        <span class="link-label">LinkedIn</span>
+        <img class="link-icon" src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn">
+      </div>
+    </a>
+    <a href="https://www.instagram.com/your-handle" target="_blank">
+      <div class="link-card" style="background-color: rgba(225, 48, 108, 0.2);">
+        <span class="link-label">Instagram</span>
+        <img class="link-icon" src="https://img.icons8.com/ios-filled/50/000000/instagram-new.png" alt="Instagram">
+      </div>
+    </a>
+    <a href="https://www.xiaohongshu.com/user/your-id" target="_blank">
+      <div class="link-card" style="background-color: rgba(255, 0, 0, 0.2);">
+        <span class="link-label">小红书 / Red</span>
+        <img class="link-icon" src="https://img.icons8.com/ios-filled/50/000000/red.png" alt="Red">
+      </div>
+    </a>
+    <a href="https://weibo.com/your-handle" target="_blank">
+      <div class="link-card" style="background-color: rgba(255, 80, 80, 0.2);">
+        <span class="link-label">Weibo</span>
+        <img class="link-icon" src="https://img.icons8.com/ios-filled/50/000000/sina-weibo.png" alt="Weibo">
+      </div>
+    </a>
+    <a href="https://mp.weixin.qq.com/your-official-account" target="_blank">
+      <div class="link-card" style="background-color: rgba(80, 200, 120, 0.2);">
+        <span class="link-label">公众号</span>
+        <img class="link-icon" src="https://img.icons8.com/ios-filled/50/000000/weixing.png" alt="公众号">
+      </div>
+    </a>
+    <a href="https://www.youtube.com/@yourchannel" target="_blank">
+      <div class="link-card" style="background-color: rgba(255, 0, 0, 0.2);">
+        <span class="link-label">YouTube</span>
+        <img class="link-icon" src="https://img.icons8.com/ios-filled/50/000000/youtube-play.png" alt="YouTube">
+      </div>
+    </a>
+    <a href="https://space.bilibili.com/your-id" target="_blank">
+      <div class="link-card" style="background-color: rgba(0, 200, 255, 0.2);">
+        <span class="link-label">Bilibili</span>
+        <img class="link-icon" src="https://img.icons8.com/ios-filled/50/000000/bilibili.png" alt="Bilibili">
+      </div>
+    </a>
+  </div>
+</body>
+</html>

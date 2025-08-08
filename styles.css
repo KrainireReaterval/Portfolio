@@ -150,3 +150,11 @@ summary:hover{ border-color: var(--border); background: rgba(255,255,255,0.03); 
 .section{ padding: 40px 24px; }
 .kicker{ color: var(--muted); text-transform: uppercase; letter-spacing: .12em; font-size: .74rem; }
 .hr{ height:1px; background: var(--border); margin: 24px 0; opacity:.9; }
+
+/* --- Spacey black-grey gradient for homepage (applies site-wide) --- */
+body{
+  background:
+    radial-gradient(1200px 800px at 20% 0%, #111214 0%, rgba(17,18,20,0.7) 40%, rgba(10,10,10,0) 70%),
+    radial-gradient(1000px 700px at 80% 100%, #161718 0%, rgba(22,23,24,0.6) 40%, rgba(10,10,10,0) 70%),
+    linear-gradient(180deg, #0a0a0c 0%, #0b0b0d 40%, #0e0e10 100%);
+}

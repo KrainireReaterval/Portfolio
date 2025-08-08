@@ -1,130 +1,145 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Octopi Fantasies</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: linear-gradient(to bottom, #000015, #000022);
-      overflow: hidden;
-      color: white;
-      font-family: 'Orbitron', sans-serif;
-      height: 100vh;
-      width: 100vw;
-      position: relative;
-    }
-
-    .background-lines {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 0;
-      background: url('https://www.transparenttextures.com/patterns/foggy-birds.png'); /* Placeholder, should be replaced with glowing fluid animation */
-      background-size: cover;
-      filter: brightness(1.5) contrast(1.2) opacity(0.08);
-      animation: float 20s infinite linear;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-5%); }
-    }
-
-    .title {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 4rem;
-      font-weight: bold;
-      z-index: 1;
-      transition: all 0.4s ease;
-    }
-
-    .menu-icon {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      width: 30px;
-      height: 30px;
-      cursor: pointer;
-      z-index: 2;
-    }
-
-    .menu-icon:before, .menu-icon:after, .menu-icon div {
-      content: '';
-      background: white;
-      display: block;
-      height: 4px;
-      margin: 6px 0;
-      transition: all 0.4s ease;
-    }
-
-    .menu {
-      position: absolute;
-      top: 0;
-      right: -300px;
-      width: 300px;
-      height: 100%;
-      background: white;
-      color: black;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding-left: 40px;
-      transition: right 0.6s ease;
-      z-index: 1;
-    }
-
-    .menu a {
-      margin: 10px 0;
-      font-size: 1.5rem;
-      text-decoration: none;
-      color: black;
-    }
-
-    body.menu-open .menu {
-      right: 0;
-    }
-
-    body.menu-open .title {
-      transform: translate(-60%, -50%);
-      color: #888;
-    }
-  </style>
+  <title>Krista Liu — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="scripts.js"></script>
+  <meta name="color-scheme" content="dark">
 </head>
 <body>
-  <div class="background-lines"></div>
+  <header class="header">
+    <div class="header-inner container">
+      <div class="brand">
+        <div class="brand-badge" aria-hidden="true"></div>
+        <div class="brand-name" data-i18n="brand">Krista Liu</div>
+      </div>
+      <button class="menu-toggle" aria-label="Menu"><div></div></button>
+      <nav class="nav" aria-label="Primary">
+        <a href="index.html" data-i18n="home_title">Homepage</a>
 
-  <div class="title">Octopi Fantasies</div>
+        <details>
+          <summary data-i18n="case_study">Case Study</summary>
+          <div class="menu-panel">
+            <div class="menu-group">
+              <h4 data-i18n="projects">Projects</h4>
+              <a href="case-studies.html#ideation" data-i18n="ideation">Ideation</a>
+              <a href="case-studies.html#pitch" data-i18n="pitch_deck">Pitch Deck</a>
+              <a href="case-studies.html#prototypes" data-i18n="prototypes">Prototypes</a>
+              <a href="case-studies.html#mvp" data-i18n="mvp">MVP</a>
+              <a href="case-studies.html#feedback" data-i18n="feedback">Feedback</a>
+            </div>
+            <div class="menu-group">
+              <h4 data-i18n="timeline">Timeline</h4>
+              <a href="case-studies.html#timeline" data-i18n="timeline">Timeline</a>
+            </div>
+          </div>
+        </details>
 
-  <div class="menu-icon" onclick="toggleMenu()">
-    <div></div>
-  </div>
+        <details>
+          <summary data-i18n="creativity">Creativity</summary>
+          <div class="menu-panel">
+            <a href="creativity.html#drawing" data-i18n="drawing_collection">Drawing Collection</a>
+            <div class="menu-group">
+              <h4 data-i18n="game">Game</h4>
+              <a href="creativity.html#game-ideation" data-i18n="ideation">Ideation</a>
+              <a href="creativity.html#game-progress" data-i18n="progress_reports">Progress Reports</a>
+            </div>
+            <div class="menu-group">
+              <h4 data-i18n="animation">Animation</h4>
+              <a href="creativity.html#ani-ideation" data-i18n="ideation">Ideation</a>
+              <a href="creativity.html#ani-progress" data-i18n="progress_reports">Progress Reports</a>
+            </div>
+          </div>
+        </details>
 
-  <div class="menu">
-    <a href="about.html">About Me</a>
-    <a href="case-studies.html">Case Studies</a>
-    <a href="creativity.html">Creativity</a>
-    <a href="knowledge.html">Knowledge Base</a>
-    <a href="contact.html">Find Me Here</a>
-  </div>
+        <details>
+          <summary data-i18n="knowledge_base">Knowledge Base</summary>
+          <div class="menu-panel">
+            <a href="knowledge.html#research" data-i18n="researches">Researches</a>
+            <a href="knowledge.html#sketch" data-i18n="unattempted">Unattempted Ideations & Sketches</a>
+          </div>
+        </details>
 
-  <script>
-    function toggleMenu() {
-      document.body.classList.toggle('menu-open');
-    }
-  </script>
+        <details>
+          <summary data-i18n="writing">Writing</summary>
+          <div class="menu-panel">
+            <a href="writing.html#mopian" data-i18n="writing_mopian">默片人生</a>
+            <a href="writing.html#xingsan" data-i18n="writing_xingsan">形散神不散</a>
+            <a href="writing.html#meng" data-i18n="writing_meng">梦序列</a>
+            <a href="writing.html#world" data-i18n="writing_world">世界</a>
+          </div>
+        </details>
+
+        <a href="contact.html" data-i18n="find_me">Find Me Here</a>
+        <button class="menu-toggle lang-switch" aria-label="Switch language" data-i18n="lang">中文</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="hero">
+    <div class="noise" aria-hidden="true"></div>
+    <section class="card container">
+      <div class="grid">
+        <div class="col-12">
+          <div class="kicker">KRISTA LIU</div>
+          <h1 data-i18n="hero_heading">Readably bold. Deliberately simple.</h1>
+          <p class="lead" data-i18n="hero_body">
+            Black & white first, geometry and soft 3D accents second. Portfolio and lab of experiments.
+          </p>
+          <div class="hr"></div>
+        </div>
+        <div class="col-6">
+          <a class="link" href="case-studies.html" data-i18n="ctas_explore">Explore Work</a>
+        </div>
+        <div class="col-6" style="text-align:right">
+          <a class="link" href="contact.html" data-i18n="ctas_contact">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer container">
+    © 2025 Krista Liu · <span class="small">Built with HTML/CSS/JS. Bilingual.</span>
+  </footer>
+
+  <!-- Mobile Drawer -->
+  <aside class="drawer" aria-label="Mobile Navigation">
+    <a href="index.html" data-i18n="home_title">Homepage</a>
+    <details>
+      <summary data-i18n="case_study">Case Study</summary>
+      <a href="case-studies.html#ideation" data-i18n="ideation">Ideation</a>
+      <a href="case-studies.html#pitch" data-i18n="pitch_deck">Pitch Deck</a>
+      <a href="case-studies.html#prototypes" data-i18n="prototypes">Prototypes</a>
+      <a href="case-studies.html#mvp" data-i18n="mvp">MVP</a>
+      <a href="case-studies.html#feedback" data-i18n="feedback">Feedback</a>
+      <a href="case-studies.html#timeline" data-i18n="timeline">Timeline</a>
+    </details>
+    <details>
+      <summary data-i18n="creativity">Creativity</summary>
+      <a href="creativity.html#drawing" data-i18n="drawing_collection">Drawing Collection</a>
+      <a href="creativity.html#game-ideation" data-i18n="ideation">Ideation</a>
+      <a href="creativity.html#game-progress" data-i18n="progress_reports">Progress Reports</a>
+      <a href="creativity.html#ani-ideation" data-i18n="ideation">Ideation</a>
+      <a href="creativity.html#ani-progress" data-i18n="progress_reports">Progress Reports</a>
+    </details>
+    <details>
+      <summary data-i18n="knowledge_base">Knowledge Base</summary>
+      <a href="knowledge.html#research" data-i18n="researches">Researches</a>
+      <a href="knowledge.html#sketch" data-i18n="unattempted">Unattempted Ideations & Sketches</a>
+    </details>
+    <details>
+      <summary data-i18n="writing">Writing</summary>
+      <a href="writing.html#mopian" data-i18n="writing_mopian">默片人生</a>
+      <a href="writing.html#xingsan" data-i18n="writing_xingsan">形散神不散</a>
+      <a href="writing.html#meng" data-i18n="writing_meng">梦序列</a>
+      <a href="writing.html#world" data-i18n="writing_world">世界</a>
+    </details>
+    <a href="contact.html" data-i18n="find_me">Find Me Here</a>
+    <button class="menu-toggle lang-switch" aria-label="Switch language" data-i18n="lang">中文</button>
+  </aside>
 </body>
 </html>
